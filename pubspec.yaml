@@ -1,0 +1,25 @@
+name: flutter_app
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_animated_dialog: ^2.0.1
+  flutter_zoom_drawer: ^2.3.1+1
+  gap: ^2.0.0
+  google_fonts: 2.1.0
+  html: ^0.15.0
+  http: ^0.13.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
