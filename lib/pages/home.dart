@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/helpers/constants.dart';
 import 'package:flutter_app/helpers/newshelper.dart';
 import 'package:flutter_app/views/news_view.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -72,6 +73,29 @@ class _HomeState extends State<Home> {
           isLoaded: isLoaded,
           failed: failed,
           allNewsItems: allNewsItems,
+        ),
+        floatingActionButton: SpeedDial(
+          // animatedIcon: AnimatedIcons.add_event,
+          icon: Icons.add_rounded,
+          activeIcon: Icons.close_rounded,
+          backgroundColor: themecol,
+          children: [
+            SpeedDialChild(
+              backgroundColor: cardcol,
+              child: Icon(Icons.share_rounded),
+              label: "Partager",
+            ),
+            SpeedDialChild(
+              backgroundColor: cardcol,
+              child: Icon(Icons.report_rounded),
+              label: "Signaler un problème",
+            ),
+            SpeedDialChild(
+              backgroundColor: cardcol,
+              child: Icon(Icons.settings_rounded),
+              label: "Pramètres",
+            ),
+          ],
         ),
       ),
     );

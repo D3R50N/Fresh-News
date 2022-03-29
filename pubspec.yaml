@@ -12,14 +12,24 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_animated_dialog: ^2.0.1
+  flutter_native_splash: 1.2.3
+  flutter_speed_dial: ^5.0.0+1
   flutter_zoom_drawer: ^2.3.1+1
   gap: ^2.0.0
   google_fonts: 2.1.0
   html: ^0.15.0
   http: ^0.13.4
 
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/images/news_500px.png"
+  android: true
+  ios: true
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 flutter:
   uses-material-design: true
+  assets:
+    - assets/

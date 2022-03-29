@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:flutter_app/helpers/constants.dart';
 import 'package:flutter_app/helpers/newshelper.dart';
-import 'package:flutter_app/pages/home_page.dart';
+import 'package:flutter_app/pages/home.dart';
 import 'package:flutter_app/pages/news_page.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
