@@ -79,6 +79,10 @@ class _HomeState extends State<Home> {
           icon: Icons.add_rounded,
           activeIcon: Icons.close_rounded,
           backgroundColor: themecol,
+          overlayColor: Colors.black,
+          overlayOpacity: .4,
+          spaceBetweenChildren: .2,
+          spacing: 20,
           children: [
             SpeedDialChild(
               backgroundColor: cardcol,

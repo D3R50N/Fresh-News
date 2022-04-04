@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/helpers/constants.dart';
 import 'package:flutter_app/main.dart';
+import 'package:flutter_app/pages/menupages.dart';
+import 'package:flutter_app/pages/pagesnotfound.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,9 +17,12 @@ class MenuItem {
 
 class MenuItems {
   static List<MenuItem> all = [
-    MenuItem(title: "Acceuil", icondata: Icons.home_rounded),
+    MenuItem(title: "Acceuil", icondata: Icons.home_rounded, goto: HomePage()),
     MenuItem(title: "Découvrir", icondata: Icons.fiber_new),
-    MenuItem(title: "Passer à PRO", icondata: Icons.monetization_on_rounded),
+    MenuItem(
+        title: "Passer à PRO",
+        icondata: Icons.monetization_on_rounded,
+        goto: GotoProPage()),
   ];
 
   static List<MenuItem> allBottom = [
@@ -75,7 +80,7 @@ class _MenuState extends State<Menu> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {
-                          return e.goto ?? HomePage();
+                          return e.goto ?? NotFoundPage();
                         },
                       ),
                     );
@@ -100,7 +105,21 @@ class _MenuState extends State<Menu> {
                   leading: Icon(
                     e.icondata,
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    debugPrint(MenuItems.current_menu + " to " + e.title);
+                    if (MenuItems.current_menu == e.title) {
+                      ZoomDrawer.of(context)!.toggle();
+                      return;
+                    }
+                    MenuItems.current_menu = e.title;
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return e.goto ?? NotFoundPage();
+                        },
+                      ),
+                    );
+                  },
                 );
               }).toList(),
               Expanded(
